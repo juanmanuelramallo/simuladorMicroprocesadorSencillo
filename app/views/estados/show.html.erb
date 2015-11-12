@@ -1,41 +1,93 @@
 
 <div class="procesador">
 
+  <% if @estado.e_acumulador %>
+    <div class="componente acumulador encendido">
+      <h5> Acumulador | <%= @estado.acumulador %></h5>
+    </div>
+  <% else %>
+    <div class="componente acumulador">
+      <h5> Acumulador | <%= @estado.acumulador %></h5>
+    </div>
+  <%end%>
 
-  <div class="componente acumulador">
-    <h5> Acumulador | <%= @estado.acumulador %></h5>
+  <div class="l-acumulador-memoriain"></div>
+  <div class="l-acumulador-registerout"></div>
+
+
+  <% if @estado.e_IR %>
+    <div class="componente IR encendido">
+      <h5> IR | <%= @estado.IR %></h5>
+    </div>
+  <% else %>
+    <div class="componente IR">
+      <h5> IR | <%= @estado.IR %></h5>
+    </div>
+  <% end %>
+
+
+
+
+  <% if @estado.e_PC %>
+    <div class="componente PC encendido">
+      <h5> PC | <%= @estado.PC %></h5>
+    </div>
+  <% else %>
+    <div class="componente PC">
+      <h5> PC | <%= @estado.PC %></h5>
+    </div>
+  <% end %>
+
+
+  <% if @estado.e_MAR %>
+    <div class="componente MAR encendido">
+      <h5> MAR | <%= @estado.MAR %></h5>
+    </div>
+  <% else %>
+    <div class="componente MAR">
+      <h5> MAR | <%= @estado.MAR %></h5>
+    </div>
+  <% end %>
+
+
+  <% if @estado.e_decode %>
+    <div class="componente decode encendido">
+      <h5> Decode | <%= @estado.MAR %></h5>
+    </div>
+  <% else %>
+    <div class="componente decode">
+      <h5> Decode | <%= @estado.MAR %></h5>
+    </div>
+  <% end %>
+
+  <% if @estado.e_alu %>
+    <div class="ALU encendido">
+    </div>
+    <div class="alu-text">
+    <h5> ALU | <%= @estado.PC %></h5>
+    </div>
+  <% else %>
+    <div class="ALU">
+    </div>
+    <div class="alu-text">
+    <h5> ALU | <%= @estado.PC %></h5>
+    </div>
+  <% end %>
+
+
+  <div class="l-ir-decode"></div>
+
+  <div class="memoriain">
+    <h5> Memoria_in</h5>
   </div>
 
-
-  <div class="componente IR">
-    <h5> IR | <%= @estado.IR %></h5>
+  <div class="registerout">
+    <h5> Register_out </h5>
   </div>
 
-
-  <div class="componente PC">
-    <h5> PC | <%= @estado.PC %></h5>
+  <div class="addresout">
+    <h5> Address_out </h5>
   </div>
-
-
-  <div class="componente MAR">
-    <h5> MAR | <%= @estado.MAR %></h5>
-  </div>
-
-
-  <div class="componente decode">
-    <h5> Decode | <%= @estado.MAR %></h5>
-  </div>
-
-
-  <div class="ALU">
-  </div>
-  <div class="alu-text">
-  <h5> ALU | <%= @estado.PC %></h5>
-  </div>
-
-<svg height="910" width="900">
-  <line x1="0" y1="0" x2="600" y2="600" style="stroke:rgb(0,0,0);stroke-width:" />
-</svg>
 
 
 </div>

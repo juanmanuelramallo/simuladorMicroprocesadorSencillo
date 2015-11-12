@@ -47,3 +47,5 @@ end
 
 gem 'hirb'
 
+gem 'bootstrap-sass'
+

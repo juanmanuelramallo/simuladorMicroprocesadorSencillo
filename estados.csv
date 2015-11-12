@@ -1,0 +1,12 @@
+estado, decode, e_IR, e_PC, e_MAR, e_acumulador, e_decode, e_alu
+0, Reset, false, true, true, true, false, false
+1, Fetch, true, true, false, false, false, false
+2, Decode, false, false, true, false, true, false
+3, Add, false, false, true, false, false, true
+4, Store, false, false, true, true, false, false
+5, Load, false, false, true, true, false, false
+6, Jmp, false, true, true, false, false, false
+7, Sub, false, false, true, false, false, true
+8, And, false, false, true, false, false, true
+9, Nop, false, false, false, false, false, false
+10, Jz, false, true, true, false, false, false

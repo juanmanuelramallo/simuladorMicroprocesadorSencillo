@@ -6,6 +6,11 @@ $height-componente: 50px;
 $width-componente: 300px;
 $radio: 3px;
 
+*{
+  font: bold 20px Helvetica, Sans-serif;
+  letter-spacing: 2px;
+}
+
 .footer {
   position: fixed;
   bottom: 0px;
@@ -21,54 +26,83 @@ $radio: 3px;
   letter-spacing:3px;
 }
 
+$width: 1000px;
+$height: 600px;
 .procesador {
   position: relative;
   top: 30px;
-  left: 80px;
-  width: 1000px;
-  height: 600px;
+  left: 50px;
+  width: $width;
+  height: $height;
   border: 3px solid #004080;
 }
 
+$border-comp: 3px;
 .componente {
   position: absolute;
 
-  border: 3px solid #999999;
+  border: $border-comp solid #999999;
   border-radius: $radio;
   height: $height-componente;
   width: $width-componente;
+
 }
 
+.componente h5{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -180%);
+
+}
+
+.encendido {
+  background: #262626;
+  color:white;
+}
+
+
+$l-ac: 500px;
+$t-ac: 100px;
 .acumulador {
-  left: 500px;
-  top: 100px;
+  left: $l-ac;
+  top: $t-ac;
 }
 
+$t-ir:300px;
+$l-ir: $l-ac;
 .IR {
-  left: 500px;
-  top: 300px;
+  left: $l-ir;
+  top: $t-ir;
 }
 
+$t-pc: 500px;
+$l-pc: $l-ac;
 .PC {
-  left: 500px;
-  top: 500px;
+  left: $l-pc;
+  top: $t-pc;
 }
 
+$t-mar: ($t-pc - $t-ir)/2 + $t-ir;
+$l-mar: $l-ac + 200;
 .MAR {
-  left: 600px;
-  top: 400px;
+  left: $l-mar;
+  top: $t-mar;
+  width: $width-componente - (1/3)*$width-componente;
 }
 
+$l-alu: 100px;
+$l-decode: $l-alu;
+$t-decode: $t-ir;
 .decode {
-  left: 100px;
-  top: 300px;
+  left: $l-decode;
+  top: $t-decode;
 }
 
 
 /* ------------ ALU ------------ */
-$l-alu: 100px;
 $t-alu: 100px;
-
 .alu-text{
   position: absolute  ;
   left: $l-alu + 55;
@@ -78,12 +112,12 @@ $t-alu: 100px;
 .ALU {
   position:absolute;
 
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 100px solid #E6E6E6;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 120px solid #D6D6D6;
 
   height: 0;
-  width: 100px;
+  width: 140px;
 
   left: $l-alu;
   top: $t-alu;
@@ -94,7 +128,63 @@ $t-alu: 100px;
 
 }
 
+/* --------- EXTERNOS ----------- */
+$aux:7;
+$l-ext: $width+50;
 
+.memoriain{
+  position: absolute;
+  top: $t-ac - $height-componente/2 + $aux;
+  left: $l-ext;
+}
+
+$height-registerout: 75px;
+.registerout{
+  position: absolute;
+  top: $t-ac + $height-registerout + $aux;
+  left: $l-ext;
+}
+
+.addresout{
+  position:absolute;
+  top: $t-mar - $height-componente/2 + $aux;
+  left: $l-ext;
+
+}
+
+/* ---------- LINEAS ----------- */
+
+
+.l-acumulador-memoriain {
+  position: absolute;
+  top: $t-ac+$height-componente/2;
+  left: $l-ac+$width-componente+$border-comp;
+  width: 240px;
+  height:10px;
+  border-top: 3px solid black;
+}
+
+.l-acumulador-registerout{
+  position:absolute;
+  top: $t-ac+$height-componente+2*$border-comp;
+  left: $l-ac+(2/3)*$width-componente;
+  width: (1/3)*$width-componente + 240;
+
+  height: $height-registerout;
+
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+
+.l-ir-decode{
+  position:absolute;
+  top:$t-ir +$height-componente/2;
+  left:$l-decode + $width-componente + $border-comp;
+  width: $l-ir - $l-decode - $width-componente - $border-comp;
+  height: 10px;
+  border-top: 3px solid black;
+}
 
 
 
