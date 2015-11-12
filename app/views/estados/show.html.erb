@@ -1,0 +1,43 @@
+
+<div class="procesador">
+
+
+  <div class="componente acumulador">
+    <h5> Acumulador | <%= @estado.acumulador %></h5>
+  </div>
+
+
+  <div class="componente IR">
+    <h5> IR | <%= @estado.IR %></h5>
+  </div>
+
+
+  <div class="componente PC">
+    <h5> PC | <%= @estado.PC %></h5>
+  </div>
+
+
+  <div class="componente MAR">
+    <h5> MAR | <%= @estado.MAR %></h5>
+  </div>
+
+
+  <div class="componente decode">
+    <h5> Decode | <%= @estado.MAR %></h5>
+  </div>
+
+
+  <div class="ALU">
+  </div>
+  <div class="alu-text">
+  <h5> ALU | <%= @estado.PC %></h5>
+  </div>
+
+<svg height="910" width="900">
+  <line x1="0" y1="0" x2="600" y2="600" style="stroke:rgb(0,0,0);stroke-width:" />
+</svg>
+
+
+</div>
+
+<%= render 'index' %>

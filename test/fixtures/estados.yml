@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estado: 1
+  IR: MyString
+  PC: MyString
+  MAR: MyString
+  acumulador: MyString
+
+two:
+  estado: 1
+  IR: MyString
+  PC: MyString
+  MAR: MyString
+  acumulador: MyString

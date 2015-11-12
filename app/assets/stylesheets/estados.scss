@@ -1,0 +1,108 @@
+// Place all the styles related to the Estados controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$height-componente: 50px;
+$width-componente: 300px;
+$radio: 3px;
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: #B3B3B3;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  letter-spacing:3px;
+}
+
+.procesador {
+  position: relative;
+  top: 30px;
+  left: 80px;
+  width: 1000px;
+  height: 600px;
+  border: 3px solid #004080;
+}
+
+.componente {
+  position: absolute;
+
+  border: 3px solid #999999;
+  border-radius: $radio;
+  height: $height-componente;
+  width: $width-componente;
+}
+
+.acumulador {
+  left: 500px;
+  top: 100px;
+}
+
+.IR {
+  left: 500px;
+  top: 300px;
+}
+
+.PC {
+  left: 500px;
+  top: 500px;
+}
+
+.MAR {
+  left: 600px;
+  top: 400px;
+}
+
+.decode {
+  left: 100px;
+  top: 300px;
+}
+
+
+/* ------------ ALU ------------ */
+$l-alu: 100px;
+$t-alu: 100px;
+
+.alu-text{
+  position: absolute  ;
+  left: $l-alu + 55;
+  top: $t-alu + 20;
+}
+
+.ALU {
+  position:absolute;
+
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid #E6E6E6;
+
+  height: 0;
+  width: 100px;
+
+  left: $l-alu;
+  top: $t-alu;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+class EstadosController < ApplicationController
+  require 'csv'
+  def index
+
+    @e = CSV.read(params["nombre"])
+    @e.shift
+
+    @e.each do |row|
+      Estado.create(estado:row[0], IR:row[1], PC:row[2], MAR:row[3], acumulador:row[4])
+    end
+    @estados = Estado.all
+
+  end
+
+  def create
+    @estado = Estado.new(estado_params)
+
+    respond_to do |format|
+      if @estado.save
+        format.html { redirect_to root_path, notice: 'El pago fue concretado correctamente. Ahora sos premium!' }
+        format.json { render :show, status: :created, location: @payment }
+      else
+        format.html { render :new }
+        format.json { render json: @payment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def main
+
+  end
+end
