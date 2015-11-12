@@ -11,9 +11,6 @@
     </div>
   <%end%>
 
-  <div class="l-acumulador-memoriain"></div>
-  <div class="l-acumulador-registerout"></div>
-
 
   <% if @estado.e_IR %>
     <div class="componente IR encendido">
@@ -24,8 +21,6 @@
       <h5> IR | <%= @estado.IR %></h5>
     </div>
   <% end %>
-
-
 
 
   <% if @estado.e_PC %>
@@ -52,11 +47,11 @@
 
   <% if @estado.e_decode %>
     <div class="componente decode encendido">
-      <h5> Decode | <%= @estado.MAR %></h5>
+      <h5> Decode | <%= @estado.decode %></h5>
     </div>
   <% else %>
     <div class="componente decode">
-      <h5> Decode | <%= @estado.MAR %></h5>
+      <h5> Decode | <%= @estado.decode %></h5>
     </div>
   <% end %>
 
@@ -75,7 +70,29 @@
   <% end %>
 
 
+  <div class="l-memoriain"></div>
+  <div class="interseccion"></div>
+
+  <div class="l-memoriain-acumulador"></div>
+  <div class="l-memoriain-ir"></div>
+  <div class="l-memoriain-alu"></div>
+
+  <div class="l-acumulador-registerout"></div>
+  <div class="l-acumulador-alu"></div>
+
   <div class="l-ir-decode"></div>
+  <div class="l-ir-pc"></div>
+  <div class="l-ir-mar"></div>
+
+  <div class="l-pc-mar"></div>
+
+  <div class="l-mar-addressout"></div>
+
+  <div class="l-alu-acumulador"></div>
+
+
+   <div class="spacer"></div>
+
 
   <div class="memoriain">
     <h5> Memoria_in</h5>
@@ -88,6 +105,8 @@
   <div class="addresout">
     <h5> Address_out </h5>
   </div>
+
+
 
 
 </div>

@@ -26,18 +26,19 @@ $radio: 3px;
   letter-spacing:3px;
 }
 
-$width: 1000px;
+$width: 950px;
 $height: 600px;
 .procesador {
   position: relative;
   top: 30px;
-  left: 50px;
+  left: 30px;
   width: $width;
   height: $height;
   border: 3px solid #004080;
 }
 
 $border-comp: 3px;
+
 .componente {
   position: absolute;
 
@@ -86,10 +87,11 @@ $l-pc: $l-ac;
 
 $t-mar: ($t-pc - $t-ir)/2 + $t-ir;
 $l-mar: $l-ac + 200;
+$width-mar: $width-componente - (1/3)*$width-componente;
 .MAR {
   left: $l-mar;
   top: $t-mar;
-  width: $width-componente - (1/3)*$width-componente;
+  width: $width-mar;
 }
 
 $l-alu: 100px;
@@ -104,27 +106,25 @@ $t-decode: $t-ir;
 /* ------------ ALU ------------ */
 $t-alu: 100px;
 .alu-text{
-  position: absolute  ;
-  left: $l-alu + 55;
-  top: $t-alu + 20;
+  position: absolute;
+  z-index:3;
+  left: $l-alu + 25;
+  top: $t-alu + 10;
 }
 
+$width-alu: 140px;
 .ALU {
   position:absolute;
-
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-top: 120px solid #D6D6D6;
+  z-index:2;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 100px solid #D6D6D6;
 
   height: 0;
-  width: 140px;
+  width: $width-alu;
 
   left: $l-alu;
   top: $t-alu;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
 }
 
@@ -154,26 +154,123 @@ $height-registerout: 75px;
 
 /* ---------- LINEAS ----------- */
 
+$ancho:3px;
+$ancho-e:4px;
+$on: #63CC57;
+$off: black;
 
-.l-acumulador-memoriain {
+$width-l-memoriain: $width - $l-ir - $width-componente - 100;
+$dist-ext:140px;
+
+.interseccion{
+  position: absolute;
+  top: $t-ac + $height-componente/2 - $border-comp ;
+  left: $l-ir + $width-componente + $width-l-memoriain;
+  width: 3*$border-comp;
+  height: 3*$border-comp;
+  border-radius: 50%;
+  background-color:$off;
+}
+.interseccion.on{
+  top: $t-ac + $height-componente/2 - (3/2)*$border-comp ;
+  left: $l-ir + $width-componente + $border-comp + $width-l-memoriain - (3/2)*$border-comp;
+  width: 4*$border-comp;
+  height: 4*$border-comp;
+  background-color:$on;
+}
+
+
+.l-memoriain{
+  position:absolute;
+  top: $t-ac + $height-componente/2;
+  left: $l-ac + $width-componente + $width-l-memoriain;
+  width: $dist-ext;
+  height:10px;
+  border-top: $ancho solid $off;
+}
+.l-memoriain.on{
+  border-top: $ancho-e solid $on;
+}
+
+
+.l-memoriain-acumulador {
   position: absolute;
   top: $t-ac+$height-componente/2;
-  left: $l-ac+$width-componente+$border-comp;
-  width: 240px;
+  left: $l-ir + $width-componente + $width-l-memoriain;
+  left: $l-ac + $width-componente + $border-comp;
+  width: $width-l-memoriain;
   height:10px;
-  border-top: 3px solid black;
+  border-top: $ancho solid $off;
 }
+.l-memoriain-acumulador.l-on {
+  border-top: $ancho-e solid $on;
+}
+
+
+.l-memoriain-ir{
+  position: absolute;
+  top: $t-ac + $height-componente/2;
+  left: $l-ir + $width-componente + $border-comp;
+  width: $width-l-memoriain;
+  height: $t-ir - $t-ac;
+  border-bottom: $ancho solid $off;
+  border-right: $ancho solid $off;
+}
+.l-memoriain-ir.l-on{
+  border-bottom: $ancho-e solid $on;
+  border-right: $ancho-e solid $on;
+}
+
+
+$l-topmax: (0.05)*$height;
+.l-memoriain-alu{
+  position:absolute;
+  top: $l-topmax;
+  left: $l-alu + (1/2)*$width-alu;
+  width: $l-ac + $width-componente + $width-l-memoriain - $l-alu - (1/2)*$width-alu;
+  height: $t-ac + $height-componente/2 -$l-topmax;
+  border-left: $ancho solid $off;
+  border-top: $ancho solid $off;
+  border-right: $ancho solid $off;
+}
+.l-memoriain-alu.on{
+  border-left: $ancho solid $on;
+  border-top: $ancho-e solid $on;
+  border-right: $ancho-e solid $on;
+}
+
 
 .l-acumulador-registerout{
   position:absolute;
   top: $t-ac+$height-componente+2*$border-comp;
   left: $l-ac+(2/3)*$width-componente;
-  width: (1/3)*$width-componente + 240;
-
+  width: (1/3)*$width-componente + $width-l-memoriain + $dist-ext;
   height: $height-registerout;
+  border-left: $ancho solid $off;
+  border-bottom: $ancho solid $off;
+}
+.l-acumulador-registerout.l-on{
+  border-left: $ancho-e solid $on;
+  border-bottom: $ancho-e solid $on;
+}
 
-  border-left: 3px solid black;
-  border-bottom: 3px solid black;
+
+.l-acumulador-alu{
+  position:absolute;
+  $top: $l-topmax + 30;
+  top: $top;
+  $left: $l-alu + $width-alu;
+  left: $left;
+  width: $l-ac + (1/3)*$width-componente - $left;
+  height: $t-ac - $top - $border-comp;
+  border-left: $ancho solid $off;
+  border-top: $ancho solid $off;
+  border-right: $ancho solid $off;
+}
+.l-acumulador-alu.on{
+  border-left: $ancho solid $on;
+  border-top: $ancho-e solid $on;
+  border-right: $ancho-e solid $on;
 }
 
 
@@ -183,16 +280,82 @@ $height-registerout: 75px;
   left:$l-decode + $width-componente + $border-comp;
   width: $l-ir - $l-decode - $width-componente - $border-comp;
   height: 10px;
-  border-top: 3px solid black;
+  border-top: $ancho solid $off;
+}
+.l-ir-decode.l-on{
+  border-top: $ancho-e solid $on;
 }
 
 
+.l-ir-pc{
+  position:absolute;
+  top: $t-ir + $height-componente + 2*$border-comp;
+  left: $l-ir + (1/4)*$width-componente;
+  width:10px;
+  height: $t-pc - $t-ir - $height-componente - $border-comp;
+  border-left: $ancho solid $off;
+}
+.l-ir-pc.l-on{
+  border-left: $ancho-e solid $on;
+}
 
 
+.l-ir-mar{
+  position:absolute;
+  top: $t-ir + $height-componente + 2*$border-comp;
+  left: $l-ir + (1/2)*$width-componente;
+  width: $width-componente/2 - $width-mar/2;
+  height: $t-mar - $t-ir - (3/4)*$height-componente - $border-comp  ;
+  border-left: $ancho solid $off;
+  border-bottom: $ancho solid $off;
+}
+.l-ir-mar.l-on{
+  border-left: $ancho-e solid $on;
+  border-bottom: $ancho-e solid $on;
+}
 
 
+.l-pc-mar{
+  position:absolute;
+  $top: $t-mar + (3/4)*$height-componente;
+  top: $top;
+  $left:$l-ir + (1/2)*$width-componente;
+  left: $left;
+  width: $l-mar - $left;
+  height: $t-pc - $top -$border-comp;
+  border-left: $ancho solid $off;
+  border-top: $ancho solid $off;
+}
+.l-pc-mar.on{
+  border-left: $ancho-e solid $on;
+  border-top: $ancho-e solid $on;
+}
 
 
+.l-mar-addressout{
+  position: absolute;
+  top: $t-mar + $height-componente/2;
+  left: $l-mar + $width-mar + 2*$border-comp;
+  width: $l-ext - $l-mar - $width-mar - 4*$border-comp;
+  height: 0px;
+  border-top: $ancho solid $off;
+}
+.l-mar-addressout.on{
+  border-top: $ancho-e solid $on;
+}
 
+
+.l-alu-acumulador{
+  position:absolute;
+  $top: $t-ac + $height-componente;
+  top: $top;
+  $left:$l-alu + 110;
+  left: $left;
+  width: $l-ac + (1/3)*$width-componente -$left;
+  height: $height-registerout + 2*$border-comp;
+  border-left: $ancho solid $off;
+  border-bottom: $ancho solid $off;
+  border-right: $ancho solid $off;
+}
 
 
