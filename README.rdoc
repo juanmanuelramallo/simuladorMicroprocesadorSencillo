@@ -1,5 +1,7 @@
 == README
 
+Simulador creado para la exposición de la práctica 10 de la materia de Taller de Arquitectura, en la Facultad de Informática de la Universidad Nacional de La Plata, 2015.
+
 Esta aplicación corre en un servidor local haciendo uso del lenguaje Ruby, con la gema Rails, más conocido como Ruby on Rails. 
 
 No requiere configuraciones extras. (Probado en Mac OS y Windows 10 sin problemas)
