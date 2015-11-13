@@ -53,3 +53,5 @@ gem 'rails_12factor'
 
 gem 'puma'
 
+gem 'tzinfo-data', platform: [:mingw, :mswin]
+

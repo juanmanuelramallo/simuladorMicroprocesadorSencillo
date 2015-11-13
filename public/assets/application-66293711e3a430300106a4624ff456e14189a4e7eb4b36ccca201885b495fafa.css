@@ -1,0 +1,402 @@
+/* line 9, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+h1 {
+  font: bold 30px Helvetica, Sans-serif;
+}
+
+/* line 13, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+* {
+  font: bold 20px Helvetica, Sans-serif;
+  letter-spacing: 2px;
+}
+
+/* line 18, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+a {
+  text-decoration: none;
+  color: #29602C;
+}
+
+/* line 23, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.show-id {
+  position: fixed;
+  padding-left: 20px;
+}
+
+/* line 28, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: #B3B3B3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+/* line 45, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.procesador {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  width: 950px;
+  height: 600px;
+  border: 3px solid #004080;
+}
+
+/* line 56, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.componente {
+  position: absolute;
+  border: 3px solid #999999;
+  border-radius: 3px;
+  height: 50px;
+  width: 300px;
+}
+
+/* line 66, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.componente h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -180%);
+}
+
+@keyframes comp-encendido {
+  from {
+    background-color: white;
+    color: black;
+  }
+  to {
+    background-color: #262626;
+    color: white;
+  }
+}
+/* line 82, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.encendido {
+  animation-name: comp-encendido;
+  animation-duration: 0.3s;
+  background-color: #262626;
+  color: white;
+}
+
+/* line 93, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.acumulador {
+  left: 500px;
+  top: 100px;
+}
+
+/* line 100, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.IR {
+  left: 500px;
+  top: 300px;
+}
+
+/* line 107, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.PC {
+  left: 500px;
+  top: 500px;
+}
+
+/* line 115, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.MAR {
+  left: 700px;
+  top: 400px;
+  width: 200px;
+}
+
+/* line 124, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.decode {
+  left: 100px;
+  top: 300px;
+}
+
+/* ------------ ALU ------------ */
+/* line 132, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.alu-text {
+  position: absolute;
+  z-index: 3;
+  left: 162px;
+  top: 110px;
+}
+
+/* line 140, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.ALU {
+  position: absolute;
+  z-index: 2;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 100px solid #D6D6D6;
+  height: 0;
+  width: 140px;
+  left: 100px;
+  top: 100px;
+}
+
+/* line 154, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.ALU.alu-on {
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 100px solid #71C879;
+}
+
+/* --------- EXTERNOS ----------- */
+/* line 164, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.memoriain {
+  position: absolute;
+  top: 82px;
+  left: 1000px;
+}
+
+/* line 171, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.registerout {
+  position: absolute;
+  top: 182px;
+  left: 1000px;
+}
+
+/* line 177, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.addresout {
+  position: absolute;
+  top: 382px;
+  left: 1000px;
+}
+
+/* ---------- LINEAS ----------- */
+/* line 194, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.interseccion {
+  position: absolute;
+  top: 122px;
+  left: 850px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+/* line 203, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.interseccion.on {
+  top: 120.5px;
+  left: 848.5px;
+  width: 12px;
+  height: 12px;
+  background-color: #63CC57;
+}
+
+/* line 218, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain {
+  position: absolute;
+  top: 125px;
+  left: 850px;
+  width: 140px;
+  height: 10px;
+  border-top: 3px solid black;
+}
+
+/* line 226, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain.l-on {
+  border-top: 4px solid #63CC57;
+}
+
+/* line 231, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain-acumulador {
+  position: absolute;
+  top: 125px;
+  left: 850px;
+  left: 803px;
+  width: 50px;
+  height: 10px;
+  border-top: 3px solid black;
+}
+
+/* line 240, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain-acumulador.l-on {
+  border-top: 4px solid #63CC57;
+}
+
+/* line 245, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain-ir {
+  position: absolute;
+  top: 125px;
+  left: 803px;
+  width: 50px;
+  height: 200px;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+/* line 254, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain-ir.l-on {
+  border-bottom: 4px solid #63CC57;
+  border-right: 4px solid #63CC57;
+}
+
+/* line 261, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain-alu {
+  position: absolute;
+  top: 30px;
+  left: 170px;
+  width: 680px;
+  height: 95px;
+  border-left: 3px solid black;
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+}
+
+/* line 271, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-memoriain-alu.l-on {
+  border-left: 3px solid #63CC57;
+  border-top: 4px solid #63CC57;
+  border-right: 4px solid #63CC57;
+}
+
+/* line 278, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-acumulador-registerout {
+  position: absolute;
+  top: 156px;
+  left: 700px;
+  width: 290px;
+  height: 75px;
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/* line 287, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-acumulador-registerout.l-on {
+  border-left: 4px solid #63CC57;
+  border-bottom: 4px solid #63CC57;
+}
+
+/* line 293, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-acumulador-alu {
+  position: absolute;
+  top: 60px;
+  left: 240px;
+  width: 360px;
+  height: 37px;
+  border-left: 3px solid black;
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+}
+
+/* line 305, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-acumulador-alu.l-on {
+  border-left: 3px solid #63CC57;
+  border-top: 4px solid #63CC57;
+  border-right: 4px solid #63CC57;
+}
+
+/* line 312, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-ir-decode {
+  position: absolute;
+  top: 325px;
+  left: 403px;
+  width: 97px;
+  height: 10px;
+  border-top: 3px solid black;
+}
+
+/* line 320, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-ir-decode.l-on {
+  border-top: 4px solid #63CC57;
+}
+
+/* line 325, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-ir-pc {
+  position: absolute;
+  top: 356px;
+  left: 575px;
+  width: 10px;
+  height: 147px;
+  border-left: 3px solid black;
+}
+
+/* line 333, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-ir-pc.l-on {
+  border-left: 4px solid #63CC57;
+}
+
+/* line 338, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-ir-mar {
+  position: absolute;
+  top: 356px;
+  left: 650px;
+  width: 50px;
+  height: 59.5px;
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/* line 347, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-ir-mar.l-on {
+  border-left: 4px solid #63CC57;
+  border-bottom: 4px solid #63CC57;
+}
+
+/* line 353, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-pc-mar {
+  position: absolute;
+  top: 437.5px;
+  left: 650px;
+  width: 50px;
+  height: 59.5px;
+  border-left: 3px solid black;
+  border-top: 3px solid black;
+}
+
+/* line 364, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-pc-mar.l-on {
+  border-left: 4px solid #63CC57;
+  border-top: 4px solid #63CC57;
+}
+
+/* line 370, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-mar-addressout {
+  position: absolute;
+  top: 425px;
+  left: 906px;
+  width: 88px;
+  height: 0px;
+  border-top: 3px solid black;
+}
+
+/* line 378, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-mar-addressout.l-on {
+  border-top: 4px solid #63CC57;
+}
+
+/* line 383, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-alu-acumulador {
+  position: absolute;
+  top: 153px;
+  left: 210px;
+  width: 390px;
+  height: 81px;
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+/* line 395, /Users/juanmanuel/Desktop/TDA/Simulador/app/assets/stylesheets/estados.scss */
+.l-alu-acumulador.l-on {
+  border-left: 3px solid #63CC57;
+  border-bottom: 3px solid #63CC57;
+  border-right: 3px solid #63CC57;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
