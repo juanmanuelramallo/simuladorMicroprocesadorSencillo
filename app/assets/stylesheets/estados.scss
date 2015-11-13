@@ -19,6 +19,9 @@ a{
   text-decoration:none;
   color: #29602C;
 }
+a:hover{
+  color:#59A96A;
+}
 
 .show-id {
   position:fixed;
@@ -48,7 +51,8 @@ $height: 600px;
   left: 30px;
   width: $width;
   height: $height;
-  border: 3px solid #004080;
+  border: 5px solid #004080;
+  border-radius:2px;
 }
 
 $border-comp: 3px;
@@ -81,7 +85,7 @@ $border-comp: 3px;
 
 .encendido {
   animation-name: comp-encendido;
-  animation-duration: 0.3s;
+  animation-duration: 0.5s;
 
   background-color: #262626;
   color:white;
@@ -132,7 +136,7 @@ $t-alu: 100px;
 .alu-text{
   position: absolute;
   z-index:3;
-  left: $l-alu + 62;
+  left: $l-alu + 90;
   top: $t-alu + 10;
 }
 
@@ -178,7 +182,15 @@ $height-registerout: 75px;
   position:absolute;
   top: $t-mar - $height-componente/2 + $aux;
   left: $l-ext;
+}
 
+.write-signal{
+  position:absolute;
+  top: $t-pc - $height-componente/2 ;
+  left: $l-ext;
+}
+.write-signal.off{
+  color:#969696
 }
 
 /* ---------- LINEAS ----------- */
@@ -394,7 +406,7 @@ $l-topmax: (0.05)*$height;
 }
 .l-alu-acumulador.l-on{
   border-left: $ancho solid $on;
-  border-bottom: $ancho solid $on;
-  border-right: $ancho solid $on;
+  border-bottom: $ancho-e solid $on;
+  border-right: $ancho-e solid $on;
 }
 

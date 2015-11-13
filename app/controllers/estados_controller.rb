@@ -12,6 +12,7 @@ class EstadosController < ApplicationController
     @ant = Estado.where('id < ?', params[:id]).last
     @sig = Estado.where('id > ?', params[:id]).first
 
+
   end
 
   def main

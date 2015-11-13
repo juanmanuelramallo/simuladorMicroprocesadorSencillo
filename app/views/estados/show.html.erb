@@ -5,11 +5,11 @@
 
   <% if @estado.e_acumulador %>
     <div class="componente acumulador encendido">
-      <h5> Acumulador | <%= @estado.acumulador %></h5>
+      <h5> Register_A | <%= @estado.acumulador %></h5>
     </div>
   <% else %>
     <div class="componente acumulador">
-      <h5> Acumulador | <%= @estado.acumulador %></h5>
+      <h5> Register_A | <%= @estado.acumulador %></h5>
     </div>
   <%end%>
 
@@ -49,7 +49,13 @@
 
   <% if @estado.e_decode %>
     <div class="componente decode encendido">
-      <h5> Decode | <%= @estado.decode %></h5>
+      <% if @sig == nil %>
+        <h5> Decode | Halt </h5>
+      <% elsif @estado.decode == "Decode" %>
+        <h5> Decode </h5>
+      <% else %>
+        <h5> Decode <%= @estado.decode %></h5>
+      <%end %>
     </div>
   <% else %>
     <div class="componente decode">
@@ -61,13 +67,13 @@
     <div class="ALU alu-on">
     </div>
     <div class="alu-text">
-    <h5> ALU | <%= @estado.PC %></h5>
+    <h5> ALU </h5>
     </div>
   <% else %>
     <div class="ALU">
     </div>
     <div class="alu-text">
-    <h5> ALU | <%= @estado.PC %></h5>
+    <h5> ALU </h5>
     </div>
   <% end %>
 
@@ -105,38 +111,45 @@
     <% when 2 %>
       <div class="l-ir-mar l-on"></div>
       <div class="l-ir-decode l-on"></div>
+      <div class="l-mar-addressout l-on"></div>
     <% when 3, 7, 8 %>
       <div class="l-memoriain l-on"></div>
       <div class="interseccion on"></div>
       <div class="l-memoriain-alu l-on"></div>
-      <div class="l-acumulador-alu l-on"></div>
+      <div class="l-alu-acumulador l-on"></div>
       <div class="l-pc-mar l-on"></div>
+      <div class="l-mar-addressout l-on"></div>
     <% when 4 %>
       <div class="l-pc-mar l-on"></div>
       <div class="l-acumulador-registerout l-on"></div>
+      <div class="l-mar-addressout l-on"></div>
     <% when 5 %>
       <div class="l-memoriain l-on"></div>
       <div class="interseccion on"></div>
       <div class="l-memoriain-acumulador l-on"></div>
       <div class="l-pc-mar l-on"></div>
+      <div class="l-mar-addressout l-on"></div>
     <% when 6 %>
       <div class="l-ir-mar l-on"></div>
       <div class="l-ir-pc l-on"></div>
+      <div class="l-mar-addressout l-on"></div>
     <% when 9 %>
 
     <% when 10 %>
       <% if @estado.acumulador == 0 %>
         <div class="l-ir-pc l-on"></div>
         <div class="l-ir-mar l-on"></div>
+        <div class="l-mar-addressout l-on"></div>
       <% else %>
         <div class="l-pc-mar l-on"></div>
+        <div class="l-mar-addressout l-on"></div>
       <% end %>
   <% end %>
 
 
 
   <div class="memoriain">
-    <h5> Memoria_in</h5>
+    <h5> Memory_in</h5>
   </div>
 
   <div class="registerout">
@@ -146,6 +159,17 @@
   <div class="addresout">
     <h5> Address_out </h5>
   </div>
+
+
+  <% if @estado.estado == 4 && @ant.estado != 4 %>
+  <div class="write-signal">
+    <h5> Write_signal (we)</h5>
+  </div>
+  <% else %>
+  <div class="write-signal off">
+    <h5> Write_signal (we)</h5>
+  </div>
+  <% end %>
 
 </div>
 
