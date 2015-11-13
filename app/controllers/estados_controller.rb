@@ -1,5 +1,6 @@
 class EstadosController < ApplicationController
   require 'csv'
+
   def index
     @estados = Estado.all
   end
@@ -7,10 +8,14 @@ class EstadosController < ApplicationController
   def show
     @estados = Estado.all
     @estado = Estado.find(params[:id])
+
+    @ant = Estado.where('id < ?', params[:id]).last
+    @sig = Estado.where('id > ?', params[:id]).first
+
   end
 
   def main
-    @e = CSV.read("salidaVhdl.csv")
+    @e = CSV.read("salidaVHDL.csv")
     @e.shift
 
     Estado.destroy_all

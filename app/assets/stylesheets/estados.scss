@@ -11,6 +11,11 @@ $radio: 3px;
   letter-spacing: 2px;
 }
 
+.show-id {
+  position:fixed;
+  padding-left:20px;
+}
+
 .footer {
   position: fixed;
   bottom: 0px;
@@ -108,7 +113,7 @@ $t-alu: 100px;
 .alu-text{
   position: absolute;
   z-index:3;
-  left: $l-alu + 25;
+  left: $l-alu + 62;
   top: $t-alu + 10;
 }
 
@@ -125,7 +130,12 @@ $width-alu: 140px;
 
   left: $l-alu;
   top: $t-alu;
+}
 
+.ALU.alu-on {
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 100px solid #71C879;
 }
 
 /* --------- EXTERNOS ----------- */
@@ -188,7 +198,7 @@ $dist-ext:140px;
   height:10px;
   border-top: $ancho solid $off;
 }
-.l-memoriain.on{
+.l-memoriain.l-on{
   border-top: $ancho-e solid $on;
 }
 
@@ -233,7 +243,7 @@ $l-topmax: (0.05)*$height;
   border-top: $ancho solid $off;
   border-right: $ancho solid $off;
 }
-.l-memoriain-alu.on{
+.l-memoriain-alu.l-on{
   border-left: $ancho solid $on;
   border-top: $ancho-e solid $on;
   border-right: $ancho-e solid $on;
@@ -267,7 +277,7 @@ $l-topmax: (0.05)*$height;
   border-top: $ancho solid $off;
   border-right: $ancho solid $off;
 }
-.l-acumulador-alu.on{
+.l-acumulador-alu.l-on{
   border-left: $ancho solid $on;
   border-top: $ancho-e solid $on;
   border-right: $ancho-e solid $on;
@@ -326,7 +336,7 @@ $l-topmax: (0.05)*$height;
   border-left: $ancho solid $off;
   border-top: $ancho solid $off;
 }
-.l-pc-mar.on{
+.l-pc-mar.l-on{
   border-left: $ancho-e solid $on;
   border-top: $ancho-e solid $on;
 }
@@ -340,7 +350,7 @@ $l-topmax: (0.05)*$height;
   height: 0px;
   border-top: $ancho solid $off;
 }
-.l-mar-addressout.on{
+.l-mar-addressout.l-on{
   border-top: $ancho-e solid $on;
 }
 
@@ -348,7 +358,7 @@ $l-topmax: (0.05)*$height;
 .l-alu-acumulador{
   position:absolute;
   $top: $t-ac + $height-componente;
-  top: $top;
+  top: $top + $border-comp;
   $left:$l-alu + 110;
   left: $left;
   width: $l-ac + (1/3)*$width-componente -$left;
@@ -357,5 +367,9 @@ $l-topmax: (0.05)*$height;
   border-bottom: $ancho solid $off;
   border-right: $ancho solid $off;
 }
-
+.l-alu-acumulador.l-on{
+  border-left: $ancho solid $on;
+  border-bottom: $ancho solid $on;
+  border-right: $ancho solid $on;
+}
 
