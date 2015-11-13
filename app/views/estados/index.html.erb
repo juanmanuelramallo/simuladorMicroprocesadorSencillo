@@ -5,9 +5,9 @@
 <h4> Estos son todos los estados a simular </h4>
 
 <% @estados.each do |e| %>
-
+<%= e.decode %>
 <%= link_to e.estado, e %>
-
+</br>
 <% end %>
 
 </div>

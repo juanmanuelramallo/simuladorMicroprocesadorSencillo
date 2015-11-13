@@ -6,9 +6,18 @@ $height-componente: 50px;
 $width-componente: 300px;
 $radio: 3px;
 
+h1{
+  font: bold 30px Helvetica, Sans-serif;
+}
+
 *{
   font: bold 20px Helvetica, Sans-serif;
   letter-spacing: 2px;
+}
+
+a{
+  text-decoration:none;
+  color: #29602C;
 }
 
 .show-id {
@@ -63,8 +72,18 @@ $border-comp: 3px;
 
 }
 
+@keyframes comp-encendido{
+  from { background-color:white;
+        color:black}
+  to { background-color: #262626;
+        color:white; }
+}
+
 .encendido {
-  background: #262626;
+  animation-name: comp-encendido;
+  animation-duration: 0.3s;
+
+  background-color: #262626;
   color:white;
 }
 
@@ -187,6 +206,12 @@ $dist-ext:140px;
   width: 4*$border-comp;
   height: 4*$border-comp;
   background-color:$on;
+}
+
+@keyframes l-on{
+  from {
+
+  }
 }
 
 
