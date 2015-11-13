@@ -49,7 +49,7 @@ gem 'hirb'
 
 gem 'bootstrap-sass'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 gem 'puma'
 
